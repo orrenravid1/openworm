@@ -1,0 +1,56 @@
+./CaPool.c: ../CaPool.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "..";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "CaPool.mod" -o "/mnt/c/Users/orren/python_projects/openworm/networks/MyNetwork/x86_64")
+
+./CaPool.o: ./CaPool.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I".." $(INCLUDES) -fPIC -c $< -o $@
+
+./Leak.c: ../Leak.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "..";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "Leak.mod" -o "/mnt/c/Users/orren/python_projects/openworm/networks/MyNetwork/x86_64")
+
+./Leak.o: ./Leak.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I".." $(INCLUDES) -fPIC -c $< -o $@
+
+./ca_boyle.c: ../ca_boyle.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "..";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "ca_boyle.mod" -o "/mnt/c/Users/orren/python_projects/openworm/networks/MyNetwork/x86_64")
+
+./ca_boyle.o: ./ca_boyle.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I".." $(INCLUDES) -fPIC -c $< -o $@
+
+./k_fast.c: ../k_fast.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "..";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "k_fast.mod" -o "/mnt/c/Users/orren/python_projects/openworm/networks/MyNetwork/x86_64")
+
+./k_fast.o: ./k_fast.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I".." $(INCLUDES) -fPIC -c $< -o $@
+
+./k_slow.c: ../k_slow.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "..";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "k_slow.mod" -o "/mnt/c/Users/orren/python_projects/openworm/networks/MyNetwork/x86_64")
+
+./k_slow.o: ./k_slow.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I".." $(INCLUDES) -fPIC -c $< -o $@
+
+./neuron_to_neuron_exc_syn.c: ../neuron_to_neuron_exc_syn.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "..";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "neuron_to_neuron_exc_syn.mod" -o "/mnt/c/Users/orren/python_projects/openworm/networks/MyNetwork/x86_64")
+
+./neuron_to_neuron_exc_syn.o: ./neuron_to_neuron_exc_syn.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I".." $(INCLUDES) -fPIC -c $< -o $@
+
+./offset_current.c: ../offset_current.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "..";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "offset_current.mod" -o "/mnt/c/Users/orren/python_projects/openworm/networks/MyNetwork/x86_64")
+
+./offset_current.o: ./offset_current.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I".." $(INCLUDES) -fPIC -c $< -o $@
+

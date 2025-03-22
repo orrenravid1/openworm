@@ -1,0 +1,40 @@
+./generic_neuron_iaf_cell.c: ../generic_neuron_iaf_cell.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "..";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "generic_neuron_iaf_cell.mod" -o "/mnt/c/Users/orren/python_projects/openworm/networks/c302_A_Full/x86_64")
+
+./generic_neuron_iaf_cell.o: ./generic_neuron_iaf_cell.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I".." $(INCLUDES) -fPIC -c $< -o $@
+
+./neuron_to_neuron_elec_syn.c: ../neuron_to_neuron_elec_syn.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "..";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "neuron_to_neuron_elec_syn.mod" -o "/mnt/c/Users/orren/python_projects/openworm/networks/c302_A_Full/x86_64")
+
+./neuron_to_neuron_elec_syn.o: ./neuron_to_neuron_elec_syn.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I".." $(INCLUDES) -fPIC -c $< -o $@
+
+./neuron_to_neuron_exc_syn.c: ../neuron_to_neuron_exc_syn.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "..";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "neuron_to_neuron_exc_syn.mod" -o "/mnt/c/Users/orren/python_projects/openworm/networks/c302_A_Full/x86_64")
+
+./neuron_to_neuron_exc_syn.o: ./neuron_to_neuron_exc_syn.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I".." $(INCLUDES) -fPIC -c $< -o $@
+
+./neuron_to_neuron_inh_syn.c: ../neuron_to_neuron_inh_syn.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "..";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "neuron_to_neuron_inh_syn.mod" -o "/mnt/c/Users/orren/python_projects/openworm/networks/c302_A_Full/x86_64")
+
+./neuron_to_neuron_inh_syn.o: ./neuron_to_neuron_inh_syn.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I".." $(INCLUDES) -fPIC -c $< -o $@
+
+./offset_current.c: ../offset_current.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "..";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "offset_current.mod" -o "/mnt/c/Users/orren/python_projects/openworm/networks/c302_A_Full/x86_64")
+
+./offset_current.o: ./offset_current.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I".." $(INCLUDES) -fPIC -c $< -o $@
+

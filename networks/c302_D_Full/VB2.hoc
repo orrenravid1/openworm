@@ -1,0 +1,343 @@
+// Cell: VB2
+/*
+{
+  "id" : "VB2",
+  "sections" : [ {
+    "name" : "Soma",
+    "id" : "Soma",
+    "points3d" : [ "-2.0, -253.3, 19.85, 3.1448371", "-2.0, -250.15516290000002, 19.85, 3.1448371" ],
+    "comments" : "Section in NeuroML is spherical, so using cylindrical section along Y axis for NEURON\n"
+  }, {
+    "name" : "Axon",
+    "id" : "Axon",
+    "points3d" : [ "-2.0, -253.3, 19.85, 0.50990194", "-2.0, -253.34999, 19.85, 0.50990194", "-2.0, -255.0, 20.550001, 0.53851646" ],
+    "parent" : "Soma",
+    "fractionAlong" : 1.0
+  }, {
+    "name" : "Neurite2",
+    "id" : "Neurite2",
+    "points3d" : [ "-2.0, -255.0, 20.550001, 0.53851646", "-2.2, -255.20001, 20.6, 0.4472136", "-2.5, -255.20001, 20.6, 0.4472136", "-3.6, -255.22499, 20.65, 0.39051247" ],
+    "parent" : "Axon",
+    "fractionAlong" : 1.0
+  }, {
+    "name" : "Neurite3",
+    "id" : "Neurite3",
+    "points3d" : [ "-3.6, -255.22499, 20.65, 0.39051247", "-3.7500002, -255.125, 20.6, 0.3640055", "-3.85, -253.34999, 19.9, 0.37416574", "-3.5500002, -249.35, 18.0, 0.37416574", "-1.4499999, -243.45, 14.650001, 0.4358899", "-1.4499999, -214.94998, -5.25, 0.4358899", "-1.4499999, -210.2, -8.4, 0.5", "-1.4499999, -167.6, -37.6, 0.5", "-1.4499999, -162.85, -40.05, 0.4358899", "-1.4499999, -135.45001, -53.95, 0.4358899", "-1.4499999, -118.49999, -60.2, 0.5", "-1.4499999, -102.35, -64.0, 0.50990194", "-1.4499999, -84.15, -66.649994, 0.4358899", "-1.4499999, -53.3, -67.049995, 0.42426404", "-1.4499999, -47.15, -65.85, 0.4358899", "-1.4499999, -3.4499998, -53.250004, 0.4358899", "-1.4499999, 3.7500002, -50.050003, 0.4358899", "-1.4499999, 19.55, -42.5, 0.50990194", "-1.4499999, 22.75, -41.65, 0.4358899" ],
+    "parent" : "Neurite2",
+    "fractionAlong" : 1.0
+  }, {
+    "name" : "Neurite4",
+    "id" : "Neurite4",
+    "points3d" : [ "-3.6, -255.22499, 20.65, 0.39051247", "-3.7500002, -255.34999, 20.7, 0.37416574", "-3.7500002, -256.3, 21.075, 0.33541018" ],
+    "parent" : "Neurite2",
+    "fractionAlong" : 1.0
+  }, {
+    "name" : "Neurite5",
+    "id" : "Neurite5",
+    "points3d" : [ "-2.0, -255.0, 20.550001, 0.53851646", "-2.0, -255.4, 20.65, 0.53851646", "-1.75, -260.15, 22.300001, 0.50990194", "-1.95, -270.7, 26.550001, 0.42426404", "-1.95, -292.95, 35.350002, 0.4358899", "-1.95, -299.9, 38.15, 0.46904156", "-1.95, -301.55002, 38.65, 0.4358899" ],
+    "parent" : "Axon",
+    "fractionAlong" : 1.0
+  } ],
+  "groups" : [ {
+    "name" : "soma_group",
+    "groups" : [ ],
+    "sections" : [ "Soma" ]
+  }, {
+    "name" : "axon_group",
+    "groups" : [ ],
+    "sections" : [ "Axon" ]
+  }, {
+    "name" : "dendrite_group",
+    "groups" : [ ],
+    "sections" : [ "Neurite2", "Neurite3", "Neurite4", "Neurite5" ]
+  }, {
+    "name" : "all",
+    "sections" : [ "Soma", "Axon", "Neurite2", "Neurite3", "Neurite4", "Neurite5" ]
+  } ],
+  "specificCapacitance" : [ {
+    "group" : "all",
+    "value" : "1.0"
+  } ],
+  "initMembPotential" : [ {
+    "group" : "all",
+    "value" : "-45.0"
+  } ],
+  "resistivity" : [ {
+    "group" : "all",
+    "value" : "12000.0"
+  } ],
+  "channelDensity" : [ {
+    "id" : "Leak_all",
+    "ionChannel" : "Leak",
+    "ion" : "non_specific",
+    "group" : "all",
+    "condDens" : "2.0E-5",
+    "erev" : "-50.0"
+  }, {
+    "id" : "k_slow_all",
+    "ionChannel" : "k_slow",
+    "ion" : "k",
+    "group" : "all",
+    "condDens" : "0.0019999999",
+    "erev" : "-60.0"
+  }, {
+    "id" : "k_fast_all",
+    "ionChannel" : "k_fast",
+    "ion" : "k",
+    "group" : "all",
+    "condDens" : "2.0E-4",
+    "erev" : "-60.0"
+  }, {
+    "id" : "ca_boyle_all",
+    "ionChannel" : "ca_boyle",
+    "ion" : "ca",
+    "group" : "all",
+    "condDens" : "0.0019999999",
+    "erev" : "40.0"
+  } ],
+  "species" : [ {
+    "id" : "ca",
+    "ion" : "ca",
+    "concentrationModel" : "CaPool",
+    "group" : "all",
+    "initialConcentration" : "0.0",
+    "initialExtConcentration" : "2.0"
+  } ]
+}
+*/
+
+load_file("subiter.hoc")
+
+begintemplate VB2
+
+public init, topol, basic_shape, subsets, geom, memb
+public x, y, z, position
+
+
+//  Some methods for referencing the cells
+
+public toString, netInfo, set_initial_v, set_initial_ion_properties, synlist
+
+
+// Section: Soma, id: Soma, parent: $s.parent
+create Soma
+public Soma
+// Section: Axon, id: Axon, parent: Soma
+create Axon
+public Axon
+// Section: Neurite2, id: Neurite2, parent: Axon
+create Neurite2
+public Neurite2
+// Section: Neurite3, id: Neurite3, parent: Neurite2
+create Neurite3
+public Neurite3
+// Section: Neurite4, id: Neurite4, parent: Neurite2
+create Neurite4
+public Neurite4
+// Section: Neurite5, id: Neurite5, parent: Axon
+create Neurite5
+public Neurite5
+
+// Group: {name=soma_group, groups=[], sections=[Soma]}
+objref soma_group
+// Group: {name=axon_group, groups=[], sections=[Axon]}
+objref axon_group
+// Group: {name=dendrite_group, groups=[], sections=[Neurite2, Neurite3, Neurite4, Neurite5]}
+objref dendrite_group
+// Group: {name=all, sections=[Soma, Axon, Neurite2, Neurite3, Neurite4, Neurite5]}
+objref all
+
+objref synlist
+
+proc init() {
+    topol()
+    geom_nseg()
+    subsets()
+    subsets_inhomogeneous()
+    biophys()
+    biophys_inhomogeneous()
+    synlist = new List()
+    x = y = z = 0
+
+}
+
+proc set_initial_v() {
+    // Taken from the initMembPotential value
+    forsec all v = -45.0  // units: mV
+}
+
+
+proc set_initial_ion_properties() {
+    // From species
+    // Ion: ca on group: all, with concentration model: CaPool
+    forsec all {
+        cai = 0.0  // units: mM
+        cao = 2.0  // units: mM
+    }
+}
+
+
+proc topol() {
+    basic_shape()
+    connect Axon(0), Soma(1.0)
+    connect Neurite2(0), Axon(1.0)
+    connect Neurite3(0), Neurite2(1.0)
+    connect Neurite4(0), Neurite2(1.0)
+    connect Neurite5(0), Axon(1.0)
+
+}
+
+
+proc basic_shape() {
+
+    // Section: Soma, id: Soma, parent: $s.parent (entry count 0/100)
+    Soma { pt3dclear() }
+    Soma { pt3dadd( -2.0, -253.3, 19.85, 3.1448371 ) }
+    Soma { pt3dadd( -2.0, -250.15516290000002, 19.85, 3.1448371 ) }
+    // Section: Axon, id: Axon, parent: Soma (entry count 2/100)
+    Axon { pt3dclear() }
+    Axon { pt3dadd( -2.0, -253.3, 19.85, 0.50990194 ) }
+    Axon { pt3dadd( -2.0, -253.34999, 19.85, 0.50990194 ) }
+    Axon { pt3dadd( -2.0, -255.0, 20.550001, 0.53851646 ) }
+    // Section: Neurite2, id: Neurite2, parent: Axon (entry count 5/100)
+    Neurite2 { pt3dclear() }
+    Neurite2 { pt3dadd( -2.0, -255.0, 20.550001, 0.53851646 ) }
+    Neurite2 { pt3dadd( -2.2, -255.20001, 20.6, 0.4472136 ) }
+    Neurite2 { pt3dadd( -2.5, -255.20001, 20.6, 0.4472136 ) }
+    Neurite2 { pt3dadd( -3.6, -255.22499, 20.65, 0.39051247 ) }
+    // Section: Neurite3, id: Neurite3, parent: Neurite2 (entry count 9/100)
+    Neurite3 { pt3dclear() }
+    Neurite3 { pt3dadd( -3.6, -255.22499, 20.65, 0.39051247 ) }
+    Neurite3 { pt3dadd( -3.7500002, -255.125, 20.6, 0.3640055 ) }
+    Neurite3 { pt3dadd( -3.85, -253.34999, 19.9, 0.37416574 ) }
+    Neurite3 { pt3dadd( -3.5500002, -249.35, 18.0, 0.37416574 ) }
+    Neurite3 { pt3dadd( -1.4499999, -243.45, 14.650001, 0.4358899 ) }
+    Neurite3 { pt3dadd( -1.4499999, -214.94998, -5.25, 0.4358899 ) }
+    Neurite3 { pt3dadd( -1.4499999, -210.2, -8.4, 0.5 ) }
+    Neurite3 { pt3dadd( -1.4499999, -167.6, -37.6, 0.5 ) }
+    Neurite3 { pt3dadd( -1.4499999, -162.85, -40.05, 0.4358899 ) }
+    Neurite3 { pt3dadd( -1.4499999, -135.45001, -53.95, 0.4358899 ) }
+    Neurite3 { pt3dadd( -1.4499999, -118.49999, -60.2, 0.5 ) }
+    Neurite3 { pt3dadd( -1.4499999, -102.35, -64.0, 0.50990194 ) }
+    Neurite3 { pt3dadd( -1.4499999, -84.15, -66.649994, 0.4358899 ) }
+    Neurite3 { pt3dadd( -1.4499999, -53.3, -67.049995, 0.42426404 ) }
+    Neurite3 { pt3dadd( -1.4499999, -47.15, -65.85, 0.4358899 ) }
+    Neurite3 { pt3dadd( -1.4499999, -3.4499998, -53.250004, 0.4358899 ) }
+    Neurite3 { pt3dadd( -1.4499999, 3.7500002, -50.050003, 0.4358899 ) }
+    Neurite3 { pt3dadd( -1.4499999, 19.55, -42.5, 0.50990194 ) }
+    Neurite3 { pt3dadd( -1.4499999, 22.75, -41.65, 0.4358899 ) }
+    // Section: Neurite4, id: Neurite4, parent: Neurite2 (entry count 28/100)
+    Neurite4 { pt3dclear() }
+    Neurite4 { pt3dadd( -3.6, -255.22499, 20.65, 0.39051247 ) }
+    Neurite4 { pt3dadd( -3.7500002, -255.34999, 20.7, 0.37416574 ) }
+    Neurite4 { pt3dadd( -3.7500002, -256.3, 21.075, 0.33541018 ) }
+    // Section: Neurite5, id: Neurite5, parent: Axon (entry count 31/100)
+    Neurite5 { pt3dclear() }
+    Neurite5 { pt3dadd( -2.0, -255.0, 20.550001, 0.53851646 ) }
+    Neurite5 { pt3dadd( -2.0, -255.4, 20.65, 0.53851646 ) }
+    Neurite5 { pt3dadd( -1.75, -260.15, 22.300001, 0.50990194 ) }
+    Neurite5 { pt3dadd( -1.95, -270.7, 26.550001, 0.42426404 ) }
+    Neurite5 { pt3dadd( -1.95, -292.95, 35.350002, 0.4358899 ) }
+    Neurite5 { pt3dadd( -1.95, -299.9, 38.15, 0.46904156 ) }
+    Neurite5 { pt3dadd( -1.95, -301.55002, 38.65, 0.4358899 ) }
+
+}
+
+
+proc subsets() { local i
+
+    // Group: {name=soma_group, groups=[], sections=[Soma]}
+    soma_group = new SectionList()
+    Soma soma_group.append()
+
+    // Group: {name=axon_group, groups=[], sections=[Axon]}
+    axon_group = new SectionList()
+    Axon axon_group.append()
+
+    // Group: {name=dendrite_group, groups=[], sections=[Neurite2, Neurite3, Neurite4, Neurite5]}
+    dendrite_group = new SectionList()
+    Neurite2 dendrite_group.append()
+    Neurite3 dendrite_group.append()
+    Neurite4 dendrite_group.append()
+    Neurite5 dendrite_group.append()
+
+    // Group: {name=all, sections=[Soma, Axon, Neurite2, Neurite3, Neurite4, Neurite5]}
+    all = new SectionList()
+    Soma all.append()
+    Axon all.append()
+    Neurite2 all.append()
+    Neurite3 all.append()
+    Neurite4 all.append()
+    Neurite5 all.append()
+
+}
+
+
+proc subsets_inhomogeneous() {
+}
+
+proc biophys() {
+
+    // Specific capacitance
+    forsec all cm = 1.0  // units: uF/cm2
+
+    // Specific axial resistance/resistivity
+    forsec all Ra = 12000.0  // units: ohm cm
+
+    // Channel densities
+    forsec all {
+        insert Leak
+        gmax_Leak = 2.0E-5  // units: S cm-2
+        e_Leak = -50.0  // units: mV
+    }
+    forsec all {
+        insert k_slow
+        gmax_k_slow = 0.0019999999  // units: S cm-2
+        ek = -60.0  // units: mV
+    }
+    forsec all {
+        insert k_fast
+        gmax_k_fast = 2.0E-4  // units: S cm-2
+        ek = -60.0  // units: mV
+    }
+    forsec all {
+        insert ca_boyle
+        gmax_ca_boyle = 0.0019999999  // units: S cm-2
+        eca = 40.0  // units: mV
+    }
+
+    // Concentration models for species
+    // Ion: ca on group: all, with concentration model: CaPool
+    forsec all {
+        insert CaPool
+    }
+
+}
+
+func H() { // Heaviside function
+    if ($1>=0) return 1
+    if ($1==0) return 0.5
+    return 0
+}
+
+proc biophys_inhomogeneous() {
+}
+
+proc geom_nseg() {
+    // All sections not mentioned here have nseg = 1
+}
+
+
+proc position() { local i
+    forsec all {
+        for i = 0, n3d()-1 {
+            pt3dchange(i, $1+x3d(i), $2+y3d(i), $3+z3d(i), diam3d(i))
+        }
+    }
+    x = $1  y = $2  z = $3
+}
+
+
+endtemplate VB2
+
+

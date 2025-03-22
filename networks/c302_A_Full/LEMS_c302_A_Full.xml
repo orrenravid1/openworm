@@ -1,0 +1,683 @@
+<Lems>
+    
+    <!--
+
+
+Parameters and setting used to generate this network:
+
+    Data reader:                    SpreadsheetDataReader
+    c302 version:                   0.9.1
+    owmeta version:                 0.12.3
+    owmeta_core version:            0.13.5
+    Cells:                          All cells
+    Cell stimulated:                All neurons
+    Connection:                     []
+    Connection numbers overridden:  None
+    Connection numbers scaled:      None
+    Connection polarities override: None
+    Muscles:                        []
+
+    Known BioParameters:
+        BioParameter: chem_exc_syn_decay = 10ms (SRC: BlindGuess, certainty 0.1)
+        BioParameter: chem_exc_syn_erev = 0mV (SRC: BlindGuess, certainty 0.1)
+        BioParameter: chem_exc_syn_rise = 3ms (SRC: BlindGuess, certainty 0.1)
+        BioParameter: chem_inh_syn_decay = 10ms (SRC: BlindGuess, certainty 0.1)
+        BioParameter: chem_inh_syn_erev = -80mV (SRC: BlindGuess, certainty 0.1)
+        BioParameter: chem_inh_syn_rise = 3ms (SRC: BlindGuess, certainty 0.1)
+        BioParameter: elec_syn_decay = 10ms (SRC: BlindGuess, certainty 0.1)
+        BioParameter: elec_syn_erev = 0mV (SRC: BlindGuess, certainty 0.1)
+        BioParameter: elec_syn_rise = 3ms (SRC: BlindGuess, certainty 0.1)
+        BioParameter: muscle_iaf_C = 3pF (SRC: BlindGuess, certainty 0.1)
+        BioParameter: muscle_iaf_conductance = 0.1nS (SRC: BlindGuess, certainty 0.1)
+        BioParameter: muscle_iaf_leak_reversal = -50mV (SRC: BlindGuess, certainty 0.1)
+        BioParameter: muscle_iaf_reset = -50mV (SRC: BlindGuess, certainty 0.1)
+        BioParameter: muscle_iaf_thresh = -30mV (SRC: BlindGuess, certainty 0.1)
+        BioParameter: neuron_iaf_C = 3pF (SRC: BlindGuess, certainty 0.1)
+        BioParameter: neuron_iaf_conductance = 0.1nS (SRC: BlindGuess, certainty 0.1)
+        BioParameter: neuron_iaf_leak_reversal = -50mV (SRC: BlindGuess, certainty 0.1)
+        BioParameter: neuron_iaf_reset = -50mV (SRC: BlindGuess, certainty 0.1)
+        BioParameter: neuron_iaf_thresh = -30mV (SRC: BlindGuess, certainty 0.1)
+        BioParameter: neuron_to_muscle_chem_exc_syn_gbase = 0.01nS (SRC: BlindGuess, certainty 0.1)
+        BioParameter: neuron_to_muscle_chem_inh_syn_gbase = 0.01nS (SRC: BlindGuess, certainty 0.1)
+        BioParameter: neuron_to_muscle_elec_syn_gbase = 0nS (SRC: BlindGuess, certainty 0.1)
+        BioParameter: neuron_to_neuron_chem_exc_syn_gbase = 0.01nS (SRC: BlindGuess, certainty 0.1)
+        BioParameter: neuron_to_neuron_chem_inh_syn_gbase = 0.01nS (SRC: BlindGuess, certainty 0.1)
+        BioParameter: neuron_to_neuron_elec_syn_gbase = 0nS (SRC: BlindGuess, certainty 0.1)
+        BioParameter: unphysiological_offset_current = 0pA (SRC: KnownError, certainty 0)
+        BioParameter: unphysiological_offset_current_del = 0ms (SRC: KnownError, certainty 0)
+        BioParameter: unphysiological_offset_current_dur = 200ms (SRC: KnownError, certainty 0)
+
+   
+    -->
+
+    <Target component="sim_c302_A_Full" />
+
+    <!-- Include core NeuroML2 ComponentType definitions -->
+
+    <Include file="Cells.xml" />
+    <Include file="Networks.xml" />
+    <Include file="Simulation.xml" />
+    
+    <Include file="c302_A_Full.net.nml" />
+
+    <!-- End of NeuroML2 content -->
+    
+
+    <Simulation id="sim_c302_A_Full" length="100ms" step="0.01ms" target="c302_A_Full">
+
+        <Display id="neurons" title="c302_A_Full: Membrane potential of a number of neurons" timeScale="1ms" xmin="-10.0" xmax="110.00000000000001" ymin="-80" ymax="-40">
+            
+            <Line id="ADAL" quantity="ADAL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#e13b00" timeScale="1ms" />
+            <Line id="ADAR" quantity="ADAR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#2e112a" timeScale="1ms" />
+            <Line id="ADEL" quantity="ADEL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#32b579" timeScale="1ms" />
+            <Line id="ADER" quantity="ADER/0/generic_neuron_iaf_cell/v" scale="1mV" color="#000000" timeScale="1ms" />
+            <Line id="ADFL" quantity="ADFL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#b1f7ed" timeScale="1ms" />
+            <Line id="ADFR" quantity="ADFR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#4c2e5d" timeScale="1ms" />
+            <Line id="ADLL" quantity="ADLL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#3a00f9" timeScale="1ms" />
+            <Line id="ADLR" quantity="ADLR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#7f21ee" timeScale="1ms" />
+            <Line id="AFDL" quantity="AFDL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#232d17" timeScale="1ms" />
+            <Line id="AFDR" quantity="AFDR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#8a209a" timeScale="1ms" />
+            <Line id="AIAL" quantity="AIAL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#f6b588" timeScale="1ms" />
+            <Line id="AIAR" quantity="AIAR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#7f66e8" timeScale="1ms" />
+            <Line id="AIBL" quantity="AIBL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#002400" timeScale="1ms" />
+            <Line id="AIBR" quantity="AIBR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#aa49f2" timeScale="1ms" />
+            <Line id="AIML" quantity="AIML/0/generic_neuron_iaf_cell/v" scale="1mV" color="#c1551b" timeScale="1ms" />
+            <Line id="AIMR" quantity="AIMR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#27fe53" timeScale="1ms" />
+            <Line id="AINL" quantity="AINL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#266e49" timeScale="1ms" />
+            <Line id="AINR" quantity="AINR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#00b138" timeScale="1ms" />
+            <Line id="AIYL" quantity="AIYL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#489ce8" timeScale="1ms" />
+            <Line id="AIYR" quantity="AIYR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#14d58d" timeScale="1ms" />
+            <Line id="AIZL" quantity="AIZL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#145a8b" timeScale="1ms" />
+            <Line id="AIZR" quantity="AIZR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#4f994f" timeScale="1ms" />
+            <Line id="ALA" quantity="ALA/0/generic_neuron_iaf_cell/v" scale="1mV" color="#ed15c5" timeScale="1ms" />
+            <Line id="ALML" quantity="ALML/0/generic_neuron_iaf_cell/v" scale="1mV" color="#b2fdae" timeScale="1ms" />
+            <Line id="ALMR" quantity="ALMR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#eff317" timeScale="1ms" />
+            <Line id="ALNL" quantity="ALNL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#f157e1" timeScale="1ms" />
+            <Line id="ALNR" quantity="ALNR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#e0978c" timeScale="1ms" />
+            <Line id="AQR" quantity="AQR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#3f5fd5" timeScale="1ms" />
+            <Line id="AS1" quantity="AS1/0/generic_neuron_iaf_cell/v" scale="1mV" color="#df3d34" timeScale="1ms" />
+            <Line id="AS10" quantity="AS10/0/generic_neuron_iaf_cell/v" scale="1mV" color="#f8c082" timeScale="1ms" />
+            <Line id="AS11" quantity="AS11/0/generic_neuron_iaf_cell/v" scale="1mV" color="#62b037" timeScale="1ms" />
+            <Line id="AS2" quantity="AS2/0/generic_neuron_iaf_cell/v" scale="1mV" color="#50894f" timeScale="1ms" />
+            <Line id="AS3" quantity="AS3/0/generic_neuron_iaf_cell/v" scale="1mV" color="#a5e424" timeScale="1ms" />
+            <Line id="AS4" quantity="AS4/0/generic_neuron_iaf_cell/v" scale="1mV" color="#28ca6d" timeScale="1ms" />
+            <Line id="AS5" quantity="AS5/0/generic_neuron_iaf_cell/v" scale="1mV" color="#189213" timeScale="1ms" />
+            <Line id="AS6" quantity="AS6/0/generic_neuron_iaf_cell/v" scale="1mV" color="#702ca2" timeScale="1ms" />
+            <Line id="AS7" quantity="AS7/0/generic_neuron_iaf_cell/v" scale="1mV" color="#9ceb21" timeScale="1ms" />
+            <Line id="AS8" quantity="AS8/0/generic_neuron_iaf_cell/v" scale="1mV" color="#8325da" timeScale="1ms" />
+            <Line id="AS9" quantity="AS9/0/generic_neuron_iaf_cell/v" scale="1mV" color="#6733cb" timeScale="1ms" />
+            <Line id="ASEL" quantity="ASEL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#63eb00" timeScale="1ms" />
+            <Line id="ASER" quantity="ASER/0/generic_neuron_iaf_cell/v" scale="1mV" color="#78b869" timeScale="1ms" />
+            <Line id="ASGL" quantity="ASGL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#d75968" timeScale="1ms" />
+            <Line id="ASGR" quantity="ASGR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#9a1eb4" timeScale="1ms" />
+            <Line id="ASHL" quantity="ASHL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#4efff1" timeScale="1ms" />
+            <Line id="ASHR" quantity="ASHR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#aa4743" timeScale="1ms" />
+            <Line id="ASIL" quantity="ASIL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#18544a" timeScale="1ms" />
+            <Line id="ASIR" quantity="ASIR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#23a657" timeScale="1ms" />
+            <Line id="ASJL" quantity="ASJL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#001f2c" timeScale="1ms" />
+            <Line id="ASJR" quantity="ASJR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#4b6f14" timeScale="1ms" />
+            <Line id="ASKL" quantity="ASKL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#ddc8a6" timeScale="1ms" />
+            <Line id="ASKR" quantity="ASKR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#6ac38f" timeScale="1ms" />
+            <Line id="AUAL" quantity="AUAL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#9bd8a3" timeScale="1ms" />
+            <Line id="AUAR" quantity="AUAR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#4d2f85" timeScale="1ms" />
+            <Line id="AVAL" quantity="AVAL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#8ed2cc" timeScale="1ms" />
+            <Line id="AVAR" quantity="AVAR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#8d3ac0" timeScale="1ms" />
+            <Line id="AVBL" quantity="AVBL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#8c6d98" timeScale="1ms" />
+            <Line id="AVBR" quantity="AVBR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#cb1ab2" timeScale="1ms" />
+            <Line id="AVDL" quantity="AVDL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#e177fb" timeScale="1ms" />
+            <Line id="AVDR" quantity="AVDR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#54c29d" timeScale="1ms" />
+            <Line id="AVEL" quantity="AVEL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#0025f5" timeScale="1ms" />
+            <Line id="AVER" quantity="AVER/0/generic_neuron_iaf_cell/v" scale="1mV" color="#ca98db" timeScale="1ms" />
+            <Line id="AVFL" quantity="AVFL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#f55fcd" timeScale="1ms" />
+            <Line id="AVFR" quantity="AVFR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#f45090" timeScale="1ms" />
+            <Line id="AVG" quantity="AVG/0/generic_neuron_iaf_cell/v" scale="1mV" color="#bdb169" timeScale="1ms" />
+            <Line id="AVHL" quantity="AVHL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#56eaf2" timeScale="1ms" />
+            <Line id="AVHR" quantity="AVHR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#00ef35" timeScale="1ms" />
+            <Line id="AVJL" quantity="AVJL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#00bbf3" timeScale="1ms" />
+            <Line id="AVJR" quantity="AVJR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#2147a9" timeScale="1ms" />
+            <Line id="AVKL" quantity="AVKL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#b29498" timeScale="1ms" />
+            <Line id="AVKR" quantity="AVKR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#a99663" timeScale="1ms" />
+            <Line id="AVL" quantity="AVL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#8e2568" timeScale="1ms" />
+            <Line id="AVM" quantity="AVM/0/generic_neuron_iaf_cell/v" scale="1mV" color="#adaba4" timeScale="1ms" />
+            <Line id="AWAL" quantity="AWAL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#ea882b" timeScale="1ms" />
+            <Line id="AWAR" quantity="AWAR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#3d7d83" timeScale="1ms" />
+            <Line id="AWBL" quantity="AWBL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#be4600" timeScale="1ms" />
+            <Line id="AWBR" quantity="AWBR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#ca1316" timeScale="1ms" />
+            <Line id="AWCL" quantity="AWCL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#6a4fa0" timeScale="1ms" />
+            <Line id="AWCR" quantity="AWCR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#b5de23" timeScale="1ms" />
+            <Line id="BAGL" quantity="BAGL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#9c85f8" timeScale="1ms" />
+            <Line id="BAGR" quantity="BAGR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#70b22a" timeScale="1ms" />
+            <Line id="BDUL" quantity="BDUL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#00a975" timeScale="1ms" />
+            <Line id="BDUR" quantity="BDUR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#53f4ff" timeScale="1ms" />
+            <Line id="CANL" quantity="CANL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#47224a" timeScale="1ms" />
+            <Line id="CANR" quantity="CANR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#7c54c9" timeScale="1ms" />
+            <Line id="CEPDL" quantity="CEPDL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#a742e4" timeScale="1ms" />
+            <Line id="CEPDR" quantity="CEPDR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#14be23" timeScale="1ms" />
+            <Line id="CEPVL" quantity="CEPVL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#bcd116" timeScale="1ms" />
+            <Line id="CEPVR" quantity="CEPVR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#24a074" timeScale="1ms" />
+            <Line id="DA1" quantity="DA1/0/generic_neuron_iaf_cell/v" scale="1mV" color="#65b1c2" timeScale="1ms" />
+            <Line id="DA2" quantity="DA2/0/generic_neuron_iaf_cell/v" scale="1mV" color="#fc1a00" timeScale="1ms" />
+            <Line id="DA3" quantity="DA3/0/generic_neuron_iaf_cell/v" scale="1mV" color="#e52996" timeScale="1ms" />
+            <Line id="DA4" quantity="DA4/0/generic_neuron_iaf_cell/v" scale="1mV" color="#daae4b" timeScale="1ms" />
+            <Line id="DA5" quantity="DA5/0/generic_neuron_iaf_cell/v" scale="1mV" color="#f87b00" timeScale="1ms" />
+            <Line id="DA6" quantity="DA6/0/generic_neuron_iaf_cell/v" scale="1mV" color="#b6bed4" timeScale="1ms" />
+            <Line id="DA7" quantity="DA7/0/generic_neuron_iaf_cell/v" scale="1mV" color="#592600" timeScale="1ms" />
+            <Line id="DA8" quantity="DA8/0/generic_neuron_iaf_cell/v" scale="1mV" color="#6c6448" timeScale="1ms" />
+            <Line id="DA9" quantity="DA9/0/generic_neuron_iaf_cell/v" scale="1mV" color="#004382" timeScale="1ms" />
+            <Line id="DB1" quantity="DB1/0/generic_neuron_iaf_cell/v" scale="1mV" color="#19efb9" timeScale="1ms" />
+            <Line id="DB2" quantity="DB2/0/generic_neuron_iaf_cell/v" scale="1mV" color="#be93cb" timeScale="1ms" />
+            <Line id="DB3" quantity="DB3/0/generic_neuron_iaf_cell/v" scale="1mV" color="#d0bc77" timeScale="1ms" />
+            <Line id="DB4" quantity="DB4/0/generic_neuron_iaf_cell/v" scale="1mV" color="#9200a0" timeScale="1ms" />
+            <Line id="DB5" quantity="DB5/0/generic_neuron_iaf_cell/v" scale="1mV" color="#883d12" timeScale="1ms" />
+            <Line id="DB6" quantity="DB6/0/generic_neuron_iaf_cell/v" scale="1mV" color="#6fbd5e" timeScale="1ms" />
+            <Line id="DB7" quantity="DB7/0/generic_neuron_iaf_cell/v" scale="1mV" color="#a495b9" timeScale="1ms" />
+            <Line id="DD1" quantity="DD1/0/generic_neuron_iaf_cell/v" scale="1mV" color="#8b5ae9" timeScale="1ms" />
+            <Line id="DD2" quantity="DD2/0/generic_neuron_iaf_cell/v" scale="1mV" color="#5600d1" timeScale="1ms" />
+            <Line id="DD3" quantity="DD3/0/generic_neuron_iaf_cell/v" scale="1mV" color="#7a62e3" timeScale="1ms" />
+            <Line id="DD4" quantity="DD4/0/generic_neuron_iaf_cell/v" scale="1mV" color="#8b59b5" timeScale="1ms" />
+            <Line id="DD5" quantity="DD5/0/generic_neuron_iaf_cell/v" scale="1mV" color="#d1f8f6" timeScale="1ms" />
+            <Line id="DD6" quantity="DD6/0/generic_neuron_iaf_cell/v" scale="1mV" color="#f5e3be" timeScale="1ms" />
+            <Line id="DVA" quantity="DVA/0/generic_neuron_iaf_cell/v" scale="1mV" color="#34cd41" timeScale="1ms" />
+            <Line id="DVB" quantity="DVB/0/generic_neuron_iaf_cell/v" scale="1mV" color="#36f0f9" timeScale="1ms" />
+            <Line id="DVC" quantity="DVC/0/generic_neuron_iaf_cell/v" scale="1mV" color="#314383" timeScale="1ms" />
+            <Line id="FLPL" quantity="FLPL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#7a24ab" timeScale="1ms" />
+            <Line id="FLPR" quantity="FLPR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#c896b5" timeScale="1ms" />
+            <Line id="HSNL" quantity="HSNL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#cf60f2" timeScale="1ms" />
+            <Line id="HSNR" quantity="HSNR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#eea3e2" timeScale="1ms" />
+            <Line id="I1L" quantity="I1L/0/generic_neuron_iaf_cell/v" scale="1mV" color="#37ed2b" timeScale="1ms" />
+            <Line id="I1R" quantity="I1R/0/generic_neuron_iaf_cell/v" scale="1mV" color="#26655a" timeScale="1ms" />
+            <Line id="I2L" quantity="I2L/0/generic_neuron_iaf_cell/v" scale="1mV" color="#ab58c1" timeScale="1ms" />
+            <Line id="I2R" quantity="I2R/0/generic_neuron_iaf_cell/v" scale="1mV" color="#8b6687" timeScale="1ms" />
+            <Line id="I3" quantity="I3/0/generic_neuron_iaf_cell/v" scale="1mV" color="#0050a1" timeScale="1ms" />
+            <Line id="I4" quantity="I4/0/generic_neuron_iaf_cell/v" scale="1mV" color="#33171c" timeScale="1ms" />
+            <Line id="I5" quantity="I5/0/generic_neuron_iaf_cell/v" scale="1mV" color="#85d9a5" timeScale="1ms" />
+            <Line id="I6" quantity="I6/0/generic_neuron_iaf_cell/v" scale="1mV" color="#ae9dde" timeScale="1ms" />
+            <Line id="IL1DL" quantity="IL1DL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#55c0ca" timeScale="1ms" />
+            <Line id="IL1DR" quantity="IL1DR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#009491" timeScale="1ms" />
+            <Line id="IL1L" quantity="IL1L/0/generic_neuron_iaf_cell/v" scale="1mV" color="#a27f4f" timeScale="1ms" />
+            <Line id="IL1R" quantity="IL1R/0/generic_neuron_iaf_cell/v" scale="1mV" color="#63e7e3" timeScale="1ms" />
+            <Line id="IL1VL" quantity="IL1VL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#d500ac" timeScale="1ms" />
+            <Line id="IL1VR" quantity="IL1VR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#89dec8" timeScale="1ms" />
+            <Line id="IL2DL" quantity="IL2DL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#84fca1" timeScale="1ms" />
+            <Line id="IL2DR" quantity="IL2DR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#7e9250" timeScale="1ms" />
+            <Line id="IL2L" quantity="IL2L/0/generic_neuron_iaf_cell/v" scale="1mV" color="#53d250" timeScale="1ms" />
+            <Line id="IL2R" quantity="IL2R/0/generic_neuron_iaf_cell/v" scale="1mV" color="#1177b5" timeScale="1ms" />
+            <Line id="IL2VL" quantity="IL2VL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#69dce3" timeScale="1ms" />
+            <Line id="IL2VR" quantity="IL2VR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#00cf23" timeScale="1ms" />
+            <Line id="LUAL" quantity="LUAL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#20247d" timeScale="1ms" />
+            <Line id="LUAR" quantity="LUAR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#c3f8c2" timeScale="1ms" />
+            <Line id="M1" quantity="M1/0/generic_neuron_iaf_cell/v" scale="1mV" color="#799aa7" timeScale="1ms" />
+            <Line id="M2L" quantity="M2L/0/generic_neuron_iaf_cell/v" scale="1mV" color="#e7209b" timeScale="1ms" />
+            <Line id="M2R" quantity="M2R/0/generic_neuron_iaf_cell/v" scale="1mV" color="#00005c" timeScale="1ms" />
+            <Line id="M3L" quantity="M3L/0/generic_neuron_iaf_cell/v" scale="1mV" color="#494bc0" timeScale="1ms" />
+            <Line id="M3R" quantity="M3R/0/generic_neuron_iaf_cell/v" scale="1mV" color="#db5a46" timeScale="1ms" />
+            <Line id="M4" quantity="M4/0/generic_neuron_iaf_cell/v" scale="1mV" color="#9a30fa" timeScale="1ms" />
+            <Line id="M5" quantity="M5/0/generic_neuron_iaf_cell/v" scale="1mV" color="#ab4488" timeScale="1ms" />
+            <Line id="MCL" quantity="MCL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#dcf18e" timeScale="1ms" />
+            <Line id="MCR" quantity="MCR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#a15521" timeScale="1ms" />
+            <Line id="MI" quantity="MI/0/generic_neuron_iaf_cell/v" scale="1mV" color="#e075e2" timeScale="1ms" />
+            <Line id="NSML" quantity="NSML/0/generic_neuron_iaf_cell/v" scale="1mV" color="#7f2288" timeScale="1ms" />
+            <Line id="NSMR" quantity="NSMR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#4f8c4a" timeScale="1ms" />
+            <Line id="OLLL" quantity="OLLL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#c96f66" timeScale="1ms" />
+            <Line id="OLLR" quantity="OLLR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#4a6caf" timeScale="1ms" />
+            <Line id="OLQDL" quantity="OLQDL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#d300b1" timeScale="1ms" />
+            <Line id="OLQDR" quantity="OLQDR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#617200" timeScale="1ms" />
+            <Line id="OLQVL" quantity="OLQVL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#00b9e1" timeScale="1ms" />
+            <Line id="OLQVR" quantity="OLQVR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#7900d4" timeScale="1ms" />
+            <Line id="PDA" quantity="PDA/0/generic_neuron_iaf_cell/v" scale="1mV" color="#d8fed7" timeScale="1ms" />
+            <Line id="PDB" quantity="PDB/0/generic_neuron_iaf_cell/v" scale="1mV" color="#a97ff8" timeScale="1ms" />
+            <Line id="PDEL" quantity="PDEL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#9cf000" timeScale="1ms" />
+            <Line id="PDER" quantity="PDER/0/generic_neuron_iaf_cell/v" scale="1mV" color="#00953f" timeScale="1ms" />
+            <Line id="PHAL" quantity="PHAL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#e77dca" timeScale="1ms" />
+            <Line id="PHAR" quantity="PHAR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#d66b15" timeScale="1ms" />
+            <Line id="PHBL" quantity="PHBL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#dcc839" timeScale="1ms" />
+            <Line id="PHBR" quantity="PHBR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#d35b59" timeScale="1ms" />
+            <Line id="PHCL" quantity="PHCL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#25bc57" timeScale="1ms" />
+            <Line id="PHCR" quantity="PHCR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#7520c2" timeScale="1ms" />
+            <Line id="PLML" quantity="PLML/0/generic_neuron_iaf_cell/v" scale="1mV" color="#104189" timeScale="1ms" />
+            <Line id="PLMR" quantity="PLMR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#0000b0" timeScale="1ms" />
+            <Line id="PLNL" quantity="PLNL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#1e8c00" timeScale="1ms" />
+            <Line id="PLNR" quantity="PLNR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#17d2f6" timeScale="1ms" />
+            <Line id="PQR" quantity="PQR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#00935d" timeScale="1ms" />
+            <Line id="PVCL" quantity="PVCL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#76fa1f" timeScale="1ms" />
+            <Line id="PVCR" quantity="PVCR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#967ce4" timeScale="1ms" />
+            <Line id="PVDL" quantity="PVDL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#ea5986" timeScale="1ms" />
+            <Line id="PVDR" quantity="PVDR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#52d59f" timeScale="1ms" />
+            <Line id="PVM" quantity="PVM/0/generic_neuron_iaf_cell/v" scale="1mV" color="#0095a6" timeScale="1ms" />
+            <Line id="PVNL" quantity="PVNL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#695e10" timeScale="1ms" />
+            <Line id="PVNR" quantity="PVNR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#9dff00" timeScale="1ms" />
+            <Line id="PVPL" quantity="PVPL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#d953de" timeScale="1ms" />
+            <Line id="PVPR" quantity="PVPR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#ad9230" timeScale="1ms" />
+            <Line id="PVQL" quantity="PVQL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#28d6ab" timeScale="1ms" />
+            <Line id="PVQR" quantity="PVQR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#13d1e2" timeScale="1ms" />
+            <Line id="PVR" quantity="PVR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#5dcf36" timeScale="1ms" />
+            <Line id="PVT" quantity="PVT/0/generic_neuron_iaf_cell/v" scale="1mV" color="#a96133" timeScale="1ms" />
+            <Line id="PVWL" quantity="PVWL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#ca2da2" timeScale="1ms" />
+            <Line id="PVWR" quantity="PVWR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#4025a9" timeScale="1ms" />
+            <Line id="RIAL" quantity="RIAL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#f68627" timeScale="1ms" />
+            <Line id="RIAR" quantity="RIAR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#20e600" timeScale="1ms" />
+            <Line id="RIBL" quantity="RIBL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#b4126e" timeScale="1ms" />
+            <Line id="RIBR" quantity="RIBR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#37e45b" timeScale="1ms" />
+            <Line id="RICL" quantity="RICL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#1588cc" timeScale="1ms" />
+            <Line id="RICR" quantity="RICR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#9e10ac" timeScale="1ms" />
+            <Line id="RID" quantity="RID/0/generic_neuron_iaf_cell/v" scale="1mV" color="#af6c2c" timeScale="1ms" />
+            <Line id="RIFL" quantity="RIFL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#7c3299" timeScale="1ms" />
+            <Line id="RIFR" quantity="RIFR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#00222b" timeScale="1ms" />
+            <Line id="RIGL" quantity="RIGL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#0098b0" timeScale="1ms" />
+            <Line id="RIGR" quantity="RIGR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#dc00c8" timeScale="1ms" />
+            <Line id="RIH" quantity="RIH/0/generic_neuron_iaf_cell/v" scale="1mV" color="#e92c6f" timeScale="1ms" />
+            <Line id="RIML" quantity="RIML/0/generic_neuron_iaf_cell/v" scale="1mV" color="#28b2ab" timeScale="1ms" />
+            <Line id="RIMR" quantity="RIMR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#b4c6b5" timeScale="1ms" />
+            <Line id="RIPL" quantity="RIPL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#300042" timeScale="1ms" />
+            <Line id="RIPR" quantity="RIPR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#44e6b7" timeScale="1ms" />
+            <Line id="RIR" quantity="RIR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#40311f" timeScale="1ms" />
+            <Line id="RIS" quantity="RIS/0/generic_neuron_iaf_cell/v" scale="1mV" color="#885110" timeScale="1ms" />
+            <Line id="RIVL" quantity="RIVL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#adfc2a" timeScale="1ms" />
+            <Line id="RIVR" quantity="RIVR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#deb800" timeScale="1ms" />
+            <Line id="RMDDL" quantity="RMDDL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#d7a162" timeScale="1ms" />
+            <Line id="RMDDR" quantity="RMDDR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#5475d8" timeScale="1ms" />
+            <Line id="RMDL" quantity="RMDL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#57ddff" timeScale="1ms" />
+            <Line id="RMDR" quantity="RMDR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#47c200" timeScale="1ms" />
+            <Line id="RMDVL" quantity="RMDVL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#f3c59c" timeScale="1ms" />
+            <Line id="RMDVR" quantity="RMDVR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#8d8449" timeScale="1ms" />
+            <Line id="RMED" quantity="RMED/0/generic_neuron_iaf_cell/v" scale="1mV" color="#b74385" timeScale="1ms" />
+            <Line id="RMEL" quantity="RMEL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#9f7f97" timeScale="1ms" />
+            <Line id="RMER" quantity="RMER/0/generic_neuron_iaf_cell/v" scale="1mV" color="#554fe9" timeScale="1ms" />
+            <Line id="RMEV" quantity="RMEV/0/generic_neuron_iaf_cell/v" scale="1mV" color="#1d85d6" timeScale="1ms" />
+            <Line id="RMFL" quantity="RMFL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#bc19b2" timeScale="1ms" />
+            <Line id="RMFR" quantity="RMFR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#001365" timeScale="1ms" />
+            <Line id="RMGL" quantity="RMGL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#9c61f3" timeScale="1ms" />
+            <Line id="RMGR" quantity="RMGR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#c690a1" timeScale="1ms" />
+            <Line id="RMHL" quantity="RMHL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#c4d48b" timeScale="1ms" />
+            <Line id="RMHR" quantity="RMHR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#e41cab" timeScale="1ms" />
+            <Line id="SAADL" quantity="SAADL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#8363a1" timeScale="1ms" />
+            <Line id="SAADR" quantity="SAADR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#30ceba" timeScale="1ms" />
+            <Line id="SAAVL" quantity="SAAVL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#bada97" timeScale="1ms" />
+            <Line id="SAAVR" quantity="SAAVR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#c7d190" timeScale="1ms" />
+            <Line id="SABD" quantity="SABD/0/generic_neuron_iaf_cell/v" scale="1mV" color="#8356e8" timeScale="1ms" />
+            <Line id="SABVL" quantity="SABVL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#b7665d" timeScale="1ms" />
+            <Line id="SABVR" quantity="SABVR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#1fc1e8" timeScale="1ms" />
+            <Line id="SDQL" quantity="SDQL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#4379c0" timeScale="1ms" />
+            <Line id="SDQR" quantity="SDQR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#9bbed2" timeScale="1ms" />
+            <Line id="SIADL" quantity="SIADL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#8272a7" timeScale="1ms" />
+            <Line id="SIADR" quantity="SIADR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#e2a03f" timeScale="1ms" />
+            <Line id="SIAVL" quantity="SIAVL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#54805a" timeScale="1ms" />
+            <Line id="SIAVR" quantity="SIAVR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#cfe685" timeScale="1ms" />
+            <Line id="SIBDL" quantity="SIBDL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#8de62e" timeScale="1ms" />
+            <Line id="SIBDR" quantity="SIBDR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#54e9fb" timeScale="1ms" />
+            <Line id="SIBVL" quantity="SIBVL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#181d9a" timeScale="1ms" />
+            <Line id="SIBVR" quantity="SIBVR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#6cc243" timeScale="1ms" />
+            <Line id="SMBDL" quantity="SMBDL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#d22460" timeScale="1ms" />
+            <Line id="SMBDR" quantity="SMBDR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#4e94be" timeScale="1ms" />
+            <Line id="SMBVL" quantity="SMBVL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#955cdf" timeScale="1ms" />
+            <Line id="SMBVR" quantity="SMBVR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#f01a7b" timeScale="1ms" />
+            <Line id="SMDDL" quantity="SMDDL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#f4c831" timeScale="1ms" />
+            <Line id="SMDDR" quantity="SMDDR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#511b3a" timeScale="1ms" />
+            <Line id="SMDVL" quantity="SMDVL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#314b42" timeScale="1ms" />
+            <Line id="SMDVR" quantity="SMDVR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#3ff1bd" timeScale="1ms" />
+            <Line id="URADL" quantity="URADL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#350029" timeScale="1ms" />
+            <Line id="URADR" quantity="URADR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#6945a0" timeScale="1ms" />
+            <Line id="URAVL" quantity="URAVL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#c183d8" timeScale="1ms" />
+            <Line id="URAVR" quantity="URAVR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#96b8e5" timeScale="1ms" />
+            <Line id="URBL" quantity="URBL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#7520a0" timeScale="1ms" />
+            <Line id="URBR" quantity="URBR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#186899" timeScale="1ms" />
+            <Line id="URXL" quantity="URXL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#cdbffc" timeScale="1ms" />
+            <Line id="URXR" quantity="URXR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#9c8355" timeScale="1ms" />
+            <Line id="URYDL" quantity="URYDL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#5ea200" timeScale="1ms" />
+            <Line id="URYDR" quantity="URYDR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#14afa8" timeScale="1ms" />
+            <Line id="URYVL" quantity="URYVL/0/generic_neuron_iaf_cell/v" scale="1mV" color="#b8e83e" timeScale="1ms" />
+            <Line id="URYVR" quantity="URYVR/0/generic_neuron_iaf_cell/v" scale="1mV" color="#df2996" timeScale="1ms" />
+            <Line id="VA1" quantity="VA1/0/generic_neuron_iaf_cell/v" scale="1mV" color="#d536a5" timeScale="1ms" />
+            <Line id="VA10" quantity="VA10/0/generic_neuron_iaf_cell/v" scale="1mV" color="#45c989" timeScale="1ms" />
+            <Line id="VA11" quantity="VA11/0/generic_neuron_iaf_cell/v" scale="1mV" color="#f615c0" timeScale="1ms" />
+            <Line id="VA12" quantity="VA12/0/generic_neuron_iaf_cell/v" scale="1mV" color="#00d000" timeScale="1ms" />
+            <Line id="VA2" quantity="VA2/0/generic_neuron_iaf_cell/v" scale="1mV" color="#712020" timeScale="1ms" />
+            <Line id="VA3" quantity="VA3/0/generic_neuron_iaf_cell/v" scale="1mV" color="#bebafa" timeScale="1ms" />
+            <Line id="VA4" quantity="VA4/0/generic_neuron_iaf_cell/v" scale="1mV" color="#141e00" timeScale="1ms" />
+            <Line id="VA5" quantity="VA5/0/generic_neuron_iaf_cell/v" scale="1mV" color="#00703d" timeScale="1ms" />
+            <Line id="VA6" quantity="VA6/0/generic_neuron_iaf_cell/v" scale="1mV" color="#c58e76" timeScale="1ms" />
+            <Line id="VA7" quantity="VA7/0/generic_neuron_iaf_cell/v" scale="1mV" color="#829820" timeScale="1ms" />
+            <Line id="VA8" quantity="VA8/0/generic_neuron_iaf_cell/v" scale="1mV" color="#2695aa" timeScale="1ms" />
+            <Line id="VA9" quantity="VA9/0/generic_neuron_iaf_cell/v" scale="1mV" color="#afd9f3" timeScale="1ms" />
+            <Line id="VB1" quantity="VB1/0/generic_neuron_iaf_cell/v" scale="1mV" color="#13e9d5" timeScale="1ms" />
+            <Line id="VB10" quantity="VB10/0/generic_neuron_iaf_cell/v" scale="1mV" color="#a66c6a" timeScale="1ms" />
+            <Line id="VB11" quantity="VB11/0/generic_neuron_iaf_cell/v" scale="1mV" color="#668b00" timeScale="1ms" />
+            <Line id="VB2" quantity="VB2/0/generic_neuron_iaf_cell/v" scale="1mV" color="#d200ef" timeScale="1ms" />
+            <Line id="VB3" quantity="VB3/0/generic_neuron_iaf_cell/v" scale="1mV" color="#008bdd" timeScale="1ms" />
+            <Line id="VB4" quantity="VB4/0/generic_neuron_iaf_cell/v" scale="1mV" color="#001bd0" timeScale="1ms" />
+            <Line id="VB5" quantity="VB5/0/generic_neuron_iaf_cell/v" scale="1mV" color="#d8552d" timeScale="1ms" />
+            <Line id="VB6" quantity="VB6/0/generic_neuron_iaf_cell/v" scale="1mV" color="#e47813" timeScale="1ms" />
+            <Line id="VB7" quantity="VB7/0/generic_neuron_iaf_cell/v" scale="1mV" color="#743086" timeScale="1ms" />
+            <Line id="VB8" quantity="VB8/0/generic_neuron_iaf_cell/v" scale="1mV" color="#006bcc" timeScale="1ms" />
+            <Line id="VB9" quantity="VB9/0/generic_neuron_iaf_cell/v" scale="1mV" color="#c40060" timeScale="1ms" />
+            <Line id="VC1" quantity="VC1/0/generic_neuron_iaf_cell/v" scale="1mV" color="#4931ad" timeScale="1ms" />
+            <Line id="VC2" quantity="VC2/0/generic_neuron_iaf_cell/v" scale="1mV" color="#34292f" timeScale="1ms" />
+            <Line id="VC3" quantity="VC3/0/generic_neuron_iaf_cell/v" scale="1mV" color="#3be710" timeScale="1ms" />
+            <Line id="VC4" quantity="VC4/0/generic_neuron_iaf_cell/v" scale="1mV" color="#67cecb" timeScale="1ms" />
+            <Line id="VC5" quantity="VC5/0/generic_neuron_iaf_cell/v" scale="1mV" color="#66a8ac" timeScale="1ms" />
+            <Line id="VC6" quantity="VC6/0/generic_neuron_iaf_cell/v" scale="1mV" color="#1d1fd6" timeScale="1ms" />
+            <Line id="VD1" quantity="VD1/0/generic_neuron_iaf_cell/v" scale="1mV" color="#d1e372" timeScale="1ms" />
+            <Line id="VD10" quantity="VD10/0/generic_neuron_iaf_cell/v" scale="1mV" color="#e3e7b9" timeScale="1ms" />
+            <Line id="VD11" quantity="VD11/0/generic_neuron_iaf_cell/v" scale="1mV" color="#a792f9" timeScale="1ms" />
+            <Line id="VD12" quantity="VD12/0/generic_neuron_iaf_cell/v" scale="1mV" color="#3889fb" timeScale="1ms" />
+            <Line id="VD13" quantity="VD13/0/generic_neuron_iaf_cell/v" scale="1mV" color="#b8efa6" timeScale="1ms" />
+            <Line id="VD2" quantity="VD2/0/generic_neuron_iaf_cell/v" scale="1mV" color="#354a5e" timeScale="1ms" />
+            <Line id="VD3" quantity="VD3/0/generic_neuron_iaf_cell/v" scale="1mV" color="#368cd2" timeScale="1ms" />
+            <Line id="VD4" quantity="VD4/0/generic_neuron_iaf_cell/v" scale="1mV" color="#95e989" timeScale="1ms" />
+            <Line id="VD5" quantity="VD5/0/generic_neuron_iaf_cell/v" scale="1mV" color="#8b2d17" timeScale="1ms" />
+            <Line id="VD6" quantity="VD6/0/generic_neuron_iaf_cell/v" scale="1mV" color="#f4a5e3" timeScale="1ms" />
+            <Line id="VD7" quantity="VD7/0/generic_neuron_iaf_cell/v" scale="1mV" color="#331c7e" timeScale="1ms" />
+            <Line id="VD8" quantity="VD8/0/generic_neuron_iaf_cell/v" scale="1mV" color="#106a2e" timeScale="1ms" />
+            <Line id="VD9" quantity="VD9/0/generic_neuron_iaf_cell/v" scale="1mV" color="#31cccb" timeScale="1ms" />
+            
+        </Display>
+
+        <OutputFile id="neurons_v" fileName="c302_A_Full.dat">
+            <OutputColumn id="ADAL_v" quantity="ADAL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="ADAR_v" quantity="ADAR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="ADEL_v" quantity="ADEL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="ADER_v" quantity="ADER/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="ADFL_v" quantity="ADFL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="ADFR_v" quantity="ADFR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="ADLL_v" quantity="ADLL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="ADLR_v" quantity="ADLR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AFDL_v" quantity="AFDL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AFDR_v" quantity="AFDR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AIAL_v" quantity="AIAL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AIAR_v" quantity="AIAR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AIBL_v" quantity="AIBL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AIBR_v" quantity="AIBR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AIML_v" quantity="AIML/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AIMR_v" quantity="AIMR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AINL_v" quantity="AINL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AINR_v" quantity="AINR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AIYL_v" quantity="AIYL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AIYR_v" quantity="AIYR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AIZL_v" quantity="AIZL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AIZR_v" quantity="AIZR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="ALA_v" quantity="ALA/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="ALML_v" quantity="ALML/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="ALMR_v" quantity="ALMR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="ALNL_v" quantity="ALNL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="ALNR_v" quantity="ALNR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AQR_v" quantity="AQR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AS1_v" quantity="AS1/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AS10_v" quantity="AS10/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AS11_v" quantity="AS11/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AS2_v" quantity="AS2/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AS3_v" quantity="AS3/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AS4_v" quantity="AS4/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AS5_v" quantity="AS5/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AS6_v" quantity="AS6/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AS7_v" quantity="AS7/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AS8_v" quantity="AS8/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AS9_v" quantity="AS9/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="ASEL_v" quantity="ASEL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="ASER_v" quantity="ASER/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="ASGL_v" quantity="ASGL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="ASGR_v" quantity="ASGR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="ASHL_v" quantity="ASHL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="ASHR_v" quantity="ASHR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="ASIL_v" quantity="ASIL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="ASIR_v" quantity="ASIR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="ASJL_v" quantity="ASJL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="ASJR_v" quantity="ASJR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="ASKL_v" quantity="ASKL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="ASKR_v" quantity="ASKR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AUAL_v" quantity="AUAL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AUAR_v" quantity="AUAR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AVAL_v" quantity="AVAL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AVAR_v" quantity="AVAR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AVBL_v" quantity="AVBL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AVBR_v" quantity="AVBR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AVDL_v" quantity="AVDL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AVDR_v" quantity="AVDR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AVEL_v" quantity="AVEL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AVER_v" quantity="AVER/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AVFL_v" quantity="AVFL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AVFR_v" quantity="AVFR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AVG_v" quantity="AVG/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AVHL_v" quantity="AVHL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AVHR_v" quantity="AVHR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AVJL_v" quantity="AVJL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AVJR_v" quantity="AVJR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AVKL_v" quantity="AVKL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AVKR_v" quantity="AVKR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AVL_v" quantity="AVL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AVM_v" quantity="AVM/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AWAL_v" quantity="AWAL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AWAR_v" quantity="AWAR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AWBL_v" quantity="AWBL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AWBR_v" quantity="AWBR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AWCL_v" quantity="AWCL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="AWCR_v" quantity="AWCR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="BAGL_v" quantity="BAGL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="BAGR_v" quantity="BAGR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="BDUL_v" quantity="BDUL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="BDUR_v" quantity="BDUR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="CANL_v" quantity="CANL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="CANR_v" quantity="CANR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="CEPDL_v" quantity="CEPDL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="CEPDR_v" quantity="CEPDR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="CEPVL_v" quantity="CEPVL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="CEPVR_v" quantity="CEPVR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="DA1_v" quantity="DA1/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="DA2_v" quantity="DA2/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="DA3_v" quantity="DA3/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="DA4_v" quantity="DA4/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="DA5_v" quantity="DA5/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="DA6_v" quantity="DA6/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="DA7_v" quantity="DA7/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="DA8_v" quantity="DA8/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="DA9_v" quantity="DA9/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="DB1_v" quantity="DB1/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="DB2_v" quantity="DB2/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="DB3_v" quantity="DB3/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="DB4_v" quantity="DB4/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="DB5_v" quantity="DB5/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="DB6_v" quantity="DB6/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="DB7_v" quantity="DB7/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="DD1_v" quantity="DD1/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="DD2_v" quantity="DD2/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="DD3_v" quantity="DD3/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="DD4_v" quantity="DD4/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="DD5_v" quantity="DD5/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="DD6_v" quantity="DD6/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="DVA_v" quantity="DVA/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="DVB_v" quantity="DVB/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="DVC_v" quantity="DVC/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="FLPL_v" quantity="FLPL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="FLPR_v" quantity="FLPR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="HSNL_v" quantity="HSNL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="HSNR_v" quantity="HSNR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="I1L_v" quantity="I1L/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="I1R_v" quantity="I1R/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="I2L_v" quantity="I2L/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="I2R_v" quantity="I2R/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="I3_v" quantity="I3/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="I4_v" quantity="I4/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="I5_v" quantity="I5/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="I6_v" quantity="I6/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="IL1DL_v" quantity="IL1DL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="IL1DR_v" quantity="IL1DR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="IL1L_v" quantity="IL1L/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="IL1R_v" quantity="IL1R/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="IL1VL_v" quantity="IL1VL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="IL1VR_v" quantity="IL1VR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="IL2DL_v" quantity="IL2DL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="IL2DR_v" quantity="IL2DR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="IL2L_v" quantity="IL2L/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="IL2R_v" quantity="IL2R/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="IL2VL_v" quantity="IL2VL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="IL2VR_v" quantity="IL2VR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="LUAL_v" quantity="LUAL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="LUAR_v" quantity="LUAR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="M1_v" quantity="M1/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="M2L_v" quantity="M2L/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="M2R_v" quantity="M2R/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="M3L_v" quantity="M3L/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="M3R_v" quantity="M3R/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="M4_v" quantity="M4/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="M5_v" quantity="M5/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="MCL_v" quantity="MCL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="MCR_v" quantity="MCR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="MI_v" quantity="MI/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="NSML_v" quantity="NSML/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="NSMR_v" quantity="NSMR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="OLLL_v" quantity="OLLL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="OLLR_v" quantity="OLLR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="OLQDL_v" quantity="OLQDL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="OLQDR_v" quantity="OLQDR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="OLQVL_v" quantity="OLQVL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="OLQVR_v" quantity="OLQVR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="PDA_v" quantity="PDA/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="PDB_v" quantity="PDB/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="PDEL_v" quantity="PDEL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="PDER_v" quantity="PDER/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="PHAL_v" quantity="PHAL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="PHAR_v" quantity="PHAR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="PHBL_v" quantity="PHBL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="PHBR_v" quantity="PHBR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="PHCL_v" quantity="PHCL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="PHCR_v" quantity="PHCR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="PLML_v" quantity="PLML/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="PLMR_v" quantity="PLMR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="PLNL_v" quantity="PLNL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="PLNR_v" quantity="PLNR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="PQR_v" quantity="PQR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="PVCL_v" quantity="PVCL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="PVCR_v" quantity="PVCR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="PVDL_v" quantity="PVDL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="PVDR_v" quantity="PVDR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="PVM_v" quantity="PVM/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="PVNL_v" quantity="PVNL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="PVNR_v" quantity="PVNR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="PVPL_v" quantity="PVPL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="PVPR_v" quantity="PVPR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="PVQL_v" quantity="PVQL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="PVQR_v" quantity="PVQR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="PVR_v" quantity="PVR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="PVT_v" quantity="PVT/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="PVWL_v" quantity="PVWL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="PVWR_v" quantity="PVWR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="RIAL_v" quantity="RIAL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="RIAR_v" quantity="RIAR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="RIBL_v" quantity="RIBL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="RIBR_v" quantity="RIBR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="RICL_v" quantity="RICL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="RICR_v" quantity="RICR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="RID_v" quantity="RID/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="RIFL_v" quantity="RIFL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="RIFR_v" quantity="RIFR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="RIGL_v" quantity="RIGL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="RIGR_v" quantity="RIGR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="RIH_v" quantity="RIH/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="RIML_v" quantity="RIML/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="RIMR_v" quantity="RIMR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="RIPL_v" quantity="RIPL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="RIPR_v" quantity="RIPR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="RIR_v" quantity="RIR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="RIS_v" quantity="RIS/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="RIVL_v" quantity="RIVL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="RIVR_v" quantity="RIVR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="RMDDL_v" quantity="RMDDL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="RMDDR_v" quantity="RMDDR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="RMDL_v" quantity="RMDL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="RMDR_v" quantity="RMDR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="RMDVL_v" quantity="RMDVL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="RMDVR_v" quantity="RMDVR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="RMED_v" quantity="RMED/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="RMEL_v" quantity="RMEL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="RMER_v" quantity="RMER/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="RMEV_v" quantity="RMEV/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="RMFL_v" quantity="RMFL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="RMFR_v" quantity="RMFR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="RMGL_v" quantity="RMGL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="RMGR_v" quantity="RMGR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="RMHL_v" quantity="RMHL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="RMHR_v" quantity="RMHR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="SAADL_v" quantity="SAADL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="SAADR_v" quantity="SAADR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="SAAVL_v" quantity="SAAVL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="SAAVR_v" quantity="SAAVR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="SABD_v" quantity="SABD/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="SABVL_v" quantity="SABVL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="SABVR_v" quantity="SABVR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="SDQL_v" quantity="SDQL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="SDQR_v" quantity="SDQR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="SIADL_v" quantity="SIADL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="SIADR_v" quantity="SIADR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="SIAVL_v" quantity="SIAVL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="SIAVR_v" quantity="SIAVR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="SIBDL_v" quantity="SIBDL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="SIBDR_v" quantity="SIBDR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="SIBVL_v" quantity="SIBVL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="SIBVR_v" quantity="SIBVR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="SMBDL_v" quantity="SMBDL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="SMBDR_v" quantity="SMBDR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="SMBVL_v" quantity="SMBVL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="SMBVR_v" quantity="SMBVR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="SMDDL_v" quantity="SMDDL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="SMDDR_v" quantity="SMDDR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="SMDVL_v" quantity="SMDVL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="SMDVR_v" quantity="SMDVR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="URADL_v" quantity="URADL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="URADR_v" quantity="URADR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="URAVL_v" quantity="URAVL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="URAVR_v" quantity="URAVR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="URBL_v" quantity="URBL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="URBR_v" quantity="URBR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="URXL_v" quantity="URXL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="URXR_v" quantity="URXR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="URYDL_v" quantity="URYDL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="URYDR_v" quantity="URYDR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="URYVL_v" quantity="URYVL/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="URYVR_v" quantity="URYVR/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VA1_v" quantity="VA1/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VA10_v" quantity="VA10/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VA11_v" quantity="VA11/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VA12_v" quantity="VA12/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VA2_v" quantity="VA2/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VA3_v" quantity="VA3/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VA4_v" quantity="VA4/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VA5_v" quantity="VA5/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VA6_v" quantity="VA6/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VA7_v" quantity="VA7/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VA8_v" quantity="VA8/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VA9_v" quantity="VA9/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VB1_v" quantity="VB1/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VB10_v" quantity="VB10/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VB11_v" quantity="VB11/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VB2_v" quantity="VB2/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VB3_v" quantity="VB3/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VB4_v" quantity="VB4/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VB5_v" quantity="VB5/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VB6_v" quantity="VB6/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VB7_v" quantity="VB7/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VB8_v" quantity="VB8/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VB9_v" quantity="VB9/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VC1_v" quantity="VC1/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VC2_v" quantity="VC2/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VC3_v" quantity="VC3/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VC4_v" quantity="VC4/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VC5_v" quantity="VC5/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VC6_v" quantity="VC6/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VD1_v" quantity="VD1/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VD10_v" quantity="VD10/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VD11_v" quantity="VD11/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VD12_v" quantity="VD12/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VD13_v" quantity="VD13/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VD2_v" quantity="VD2/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VD3_v" quantity="VD3/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VD4_v" quantity="VD4/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VD5_v" quantity="VD5/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VD6_v" quantity="VD6/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VD7_v" quantity="VD7/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VD8_v" quantity="VD8/0/generic_neuron_iaf_cell/v"/>
+            <OutputColumn id="VD9_v" quantity="VD9/0/generic_neuron_iaf_cell/v"/>
+        </OutputFile>
+        
+    </Simulation>
+
+
+</Lems>
