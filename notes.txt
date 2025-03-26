@@ -39,8 +39,9 @@ and the view will update.
 windows. You just need to make sure to rerun nrnivmodl to get the dll.
 15. Applying a small current to certain somas and such can blow up
 values at fixed timestep of 0.1. I believe this might be related either
-to truly too high a timestep or we need to use the variable timestep solver
-with different tolerances for calcium especially.
+to truly too high a timestep, truly too high a current for too long or
+we need to use the variable timestep solver with different tolerances 
+for calcium especially.
 
 FUTURE:
 1. Figure out how to break up this generated neuron and hoc code
