@@ -9,6 +9,10 @@ c302 c302_D_Full parameters_D
 NOTE: Make sure that you have a cells directory in the directory you
 call otherwise it will not save correctly since it generates nml files
 for all the cells separately and puts them in the cells directory
+NOTE: I think you need to make sure you are in the same directory as
+the .owm repo you cloned to get the data from that repo in the c302
+call. But I'm not sure. Other test scripts using the owmeta library
+I think did require it to be there otherwise they didn't run correctly.
 4. Then call:
 pynml LEMS_c302_D_Full.xml -neuron -run
 to generate the neuron code, hoc files, etc
