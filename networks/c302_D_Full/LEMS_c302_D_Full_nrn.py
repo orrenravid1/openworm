@@ -328,6 +328,7 @@ Components:
 '''
 
 import neuron
+from neuron import gui
 
 import time
 import datetime

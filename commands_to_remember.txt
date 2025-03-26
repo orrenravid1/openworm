@@ -1,4 +1,5 @@
 owm clone https://github.com/openworm/OpenWormData.git --branch owmeta
 pynml <LEMS_Network>.xml -neuron -run
 c302 c302_A_Full parameters_A
+c302 c302_D_Full parameters_D
 c302 MyNetwork parameters_C -cells ["AVBR","VD3"] -cellstostimulate ["AVBR"] -duration 300

@@ -1,0 +1,56 @@
+The current Pipeline is
+1. Use the openworm venv made with Python3.10 to be able
+to correctly use owmeta and c302 together
+2. Generate the worm model from the openworm venv in the
+openworm project via: 
+owm clone https://github.com/openworm/OpenWormData.git --branch owmeta
+3. Then call: 
+c302 c302_D_Full parameters_D
+NOTE: Make sure that you have a cells directory in the directory you
+call otherwise it will not save correctly since it generates nml files
+for all the cells separately and puts them in the cells directory
+4. Then call:
+pynml LEMS_c302_D_Full.xml -neuron -run
+to generate the neuron code, hoc files, etc
+5. I believe you also need to call nrnivmodl in the directory to
+then generate the new dll with the generated mod files
+6. Finally, you can add: 
+from neuron import gui 
+to the generated
+LEMS_c302_D_Full_nrn.py file to ensure gui is opened
+7. Then run:
+python -i LEMS_c302_D_Full_nrn.py
+8. This will immediately start the sim. Let it run for the 100ms
+This will bring the configuration to steady state
+9. Next, view the shape plot via Graph -> Shape Plot
+And then under the right click menu in the shape plot, under
+Variable Scale select Shape Plot, which will show the color plot
+for voltage. Also under Shape Style pick Show Diam.
+10. Next, you can rotate and scale the view to a neuron of interest
+11. Now add a Point Process manager and select a segment to apply a
+current. You can do similar Shape Plot manipulations as was done in 9.
+12. Now go to parameters and set the current to something like
+del = 1, dur = 5, amp = 0.1.
+13. You can now either add a MovieRun or just step forward in the
+run control. However, sometimes the visual plot won't update on its
+own so you can simply rotate the plot around while the sim is running
+and the view will update.
+14. I believe all the generated python stuff can be moved safely to
+windows. You just need to make sure to rerun nrnivmodl to get the dll.
+15. Applying a small current to certain somas and such can blow up
+values at fixed timestep of 0.1. I believe this might be related either
+to truly too high a timestep or we need to use the variable timestep solver
+with different tolerances for calcium especially.
+
+FUTURE:
+1. Figure out how to break up this generated neuron and hoc code
+into clean modern python classes and without inserted mechanisms
+so that you just cleanly have the morphology and can add to it
+yourself with different mechanisms.
+Will also need to keep track of all the synapses and make them with
+different point processes etc.
+
+2. Use the other neuron venv made with latest Python to be
+able to correctly install neuron-nightly and nmodl module.
+From there you can write the python mod file generator.
+This will help with writing receptor mechanisms.
