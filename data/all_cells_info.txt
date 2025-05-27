@@ -1,0 +1,6 @@
+C. elegans Cell List:
+https://www.wormatlas.org/celllistsulston.htm
+https://www.wormatlas.org/celllist.htm
+Note that:
+- Usually lineage names are codified with a period between the blast and further divisions for postembryonic cells (e.g, QL.ap), while embryonic cells are codified with a space (e.g., AB plpapaaap)
+- Pn may indicate divisions of the embryonic founder cell P0 (i.e., zygote/Z) such that P1/P1'/P0 p is sister of AB; P2/P2'/P0 pp is sister of EMS; P3/P3'/P0 ppp: sister of C and P4/P4'/P0 pppp is sister of D (See FIG 9 in Sulston et al.,1983). Additionally, P1-12 indicate hypodermal blast cells that divide postembryonically (P lineage)
