@@ -1,3 +1,4 @@
+sep=;
 Source;Target;Weight;Type;PreSynTransmitter;PostSynReceptor
 I1L;I2L;10;chemical;Acetylcholine;
 I1L;I3;3;chemical;Acetylcholine;
